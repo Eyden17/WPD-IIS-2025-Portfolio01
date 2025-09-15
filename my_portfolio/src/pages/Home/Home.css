@@ -1,0 +1,112 @@
+
+.home {
+    width: 95%;
+    margin: 2rem auto;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: stretch;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+#intro {
+    padding-top: 10vh;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    vertical-align: middle;
+}
+
+.hero {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-bg {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    width: 450px;
+    height: 450px;
+    background: #1a1a1a;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    z-index: 0;
+    transform: rotate(3deg);
+}
+
+.hero img {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    z-index: 1;
+}
+
+p {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+strong {
+    color: var(--c-accent-light);
+}
+
+h1 {
+    padding-top: 1vh;
+    padding-bottom: 5vh;
+    margin-bottom: 0.5rem;
+}
+
+h1 ~ p {
+    margin-bottom: 1.5rem;
+
+}
+
+#links ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+#links li {
+  margin: 0;
+}
+
+#links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--c-accent);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#links a:hover {
+  transform: translateY(-3px);
+}
+
+#links a[aria-label="GitHub"]:hover {
+  color: #b8b8b8;
+}
+
+#links a[aria-label="LinkedIn"]:hover {
+  color: #0A66C2;
+}
+
+#links a[aria-label="Instagram"]:hover {
+  color: #fc4e88;
+}
+
+#links a[aria-label="Facebook"]:hover {
+  color: #1877F2;
+}
+
+#links svg {
+    font-size: 1.5rem;
+}
