@@ -1,0 +1,89 @@
+.projects {
+    width: 95%;
+    margin: 2rem auto;
+}
+
+.filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.course {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--secondary-background-color);
+    border-radius: 0.8rem;
+    border-left: 4px solid var(--c-accent);
+}
+
+.course-header svg {
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.course h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.course p {
+    margin: 0.2rem 0;
+    color: var(--text-light);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.course summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+}
+
+.course summary::-webkit-details-marker {
+    display: none;
+}
+
+.course summary::after {
+    content: "▸";
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.course[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.projects-list li {
+    margin: 0;
+}
+
+article a {
+    text-decoration: none;
+    font-weight: 900;
+    padding-right: 1.5rem;
+}
+
+.project-card {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease , background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    background-color: var(--background-color-light);
+}
