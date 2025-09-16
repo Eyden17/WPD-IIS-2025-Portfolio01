@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import logo from '../../assets/logo_dark.svg'
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook} from "react-icons/fa";
 import eyden from '../../assets/images/eyden_su.png'
 import './Home.css'
@@ -11,8 +10,8 @@ function Home() {
     <main className="home">
       <section className="intro-grid" aria-labelledby="intro-heading">
         <article id="intro" tabIndex="0">
-          <h2 className="sr-only" id="intro-heading">Sobre mí</h2>
-          <p>Bienvenido a mi página</p>
+          <h1 className="sr-only" id="intro-heading">Sobre mí</h1>
+          <p className="sub">BIENVENIDO A MI PÁGINA</p>
           <h1>
             ¡Hola, soy <strong>Eyden Su</strong>! <br />
             futuro ingeniero
@@ -42,7 +41,7 @@ function Home() {
       </section>
       
       <section id="links" aria-labelledby="links-heading" tabIndex="0">
-        <h2 className="sr-only" id="links-heading">Mis redes sociales</h2>
+        <h2 className="sub" id="links-heading">Mis redes sociales</h2>
         <ul>
           <li>
             <a 
@@ -76,7 +75,7 @@ function Home() {
           </li>
           <li>
             <a 
-              href="https://www.facebook.com/eyden.su.7" 
+              href="https://www.facebook.com/share/19iKy4GX7f/" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Facebook"
