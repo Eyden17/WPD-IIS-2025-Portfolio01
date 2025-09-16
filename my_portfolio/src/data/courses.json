@@ -1,0 +1,75 @@
+[
+  {
+    "code": "IC8057",
+    "name": "Introducción al Desarrollo de Páginas Web",
+    "semester": "Semestre I, 2025",
+    "description": "Curso introductorio a las tecnologías web, HTML, CSS, JS y frameworks modernos.",
+    "projects": [
+      {
+        "title": "Laboratorio 1: HTML y CSS",
+        "type": "Laboratorio",
+        "description": "Diseño de una página web estática aplicando etiquetas semánticas de HTML y estilos básicos en CSS para comprender la separación entre estructura y presentación.",
+        "date": "2025-08-10",
+        "technologies": ["HTML", "CSS"],
+        "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab01"
+      },
+      {
+        "title": "Laboratorio 2: Semántica HTML",
+        "type": "Laboratorio",
+        "description": "Construcción de un documento HTML con estructura semántica correcta, utilizando encabezados, secciones, artículos y navegación para mejorar accesibilidad y SEO.",
+        "date": "2025-08-17",
+        "technologies": ["HTML"],
+        "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab02",
+        "demo": "https://main--esuorg.netlify.app"
+      },
+      {
+        "title": "Laboratorio 3: Selectores, Box Model y Positioning",
+        "type": "Laboratorio",
+        "description": "Aplicación de selectores avanzados de CSS, comprensión del modelo de caja y experimentación con posicionamiento relativo, absoluto y fijo en un layout sencillo.",
+        "date": "2025-08-24",
+        "technologies": ["HTML", "CSS"],
+        "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab02/tree/lab3-selectores-boxmodel",
+        "demo": "https://lab3-selectores-boxmodel--esuorg.netlify.app"
+      },
+      {
+        "title": "Laboratorio 4: Diseño Responsive y Accesibilidad",
+        "type": "Laboratorio",
+        "description": "Responder preguntas y resolver mini caso.",
+        "date": "2025-08-31",
+        "technologies": ["HTML", "CSS"]
+      },
+      {
+        "title": "Laboratorio 5: Responsive avanzado",
+        "type": "Laboratorio",
+        "description": "Implementación de un diseño completamente responsive empleando grids y flexbox, asegurando una correcta visualización en dispositivos móviles, tablets y escritorio.",
+        "date": "2025-09-07",
+        "technologies": ["HTML", "CSS"],
+        "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab02/tree/lab5-responsive",
+        "demo": "https://lab5-responsive--esuorg.netlify.app"
+      }
+    ]
+  },
+  {
+    "code": "IC5701",
+    "name": "Compiladores e Intérpretes",
+    "semester": "Semestre I, 2025",
+    "description": "Curso sobre los fundamentos de compiladores, análisis léxico y sintáctico, y generación de código intermedio.",
+    "projects": [
+      {
+        "title": "Portafolio 1",
+        "type": "Portafolio",
+        "description": "Ejercicios en clase sobre compiladores, diagramas de Tombstone, lexemas y REGEX.",
+        "date": "2025-08-28",
+        "technologies": ["BNF", "Regex"]
+      },
+      {
+        "title": "Tarea 1: Gramática BNF",
+        "type": "Tarea",
+        "description": "Desarrollo de una gramática en forma BNF para un lenguaje sencillo, incluyendo reglas para expresiones aritméticas, declaraciones y estructuras de control.",
+        "date": "2025-09-12",
+        "technologies": ["BNF", "Regex"],
+        "repo": "https://github.com/Chedrick343/Tarea-1-compiladores"
+      }
+    ]
+  }
+]
