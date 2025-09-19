@@ -91,23 +91,21 @@ strong {
 }
 
 button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
+    padding: 0.8rem 1.5rem;
+    background: var(--c-accent);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: background 0.3s ease;
 }
+
 button:hover {
-    border-color: #646cff;
+    background: var(--c-accent-light);
 }
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
     :root {
