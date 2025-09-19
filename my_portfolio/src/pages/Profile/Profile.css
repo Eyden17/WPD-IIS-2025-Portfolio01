@@ -1,0 +1,47 @@
+.profile {
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bio {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.bio img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.skills ul, .certifications ul, .networks ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li, .certifications li, .networks li {
+  margin-bottom: 0.5rem;
+}
+
+
+.networks a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+
+}
+
+.networks a[aria-label="GitHub"]:hover {
+    color: #b8b8b8;
+}
+
+.networks a[aria-label="LinkedIn"]:hover {
+    color: #0A66C2;
+}

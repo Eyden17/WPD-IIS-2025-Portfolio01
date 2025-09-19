@@ -1,0 +1,54 @@
+    {
+    "name": "Eyden Su Díaz",
+    "photo": "/src/assets/images/eyden_su.png",
+    "bio": "Estudiante de Ingeniería en Computación en el Instituto Tecnológico de Costa Rica (TEC) motivado a aplicar conocimientos y desarrollar experiencia en la creación de páginas web robustas y accesibles. Con habilidades para trabajar en equipo, aprendizaje rápido y construir relaciones, busco la creación de soluciones tecnológicas que generen un impacto positivo. Mi objetivo profesional es especializarme en redes y telecomunicaciones, combinando habilidades técnicas y socioemocionales.",
+    "skills": {
+        "Lenguajes": ["Python", "JavaScript", "C#", "C++"],
+        "Web": ["HTML5", "CSS3", "React", "Node.js"],
+        "Bases de datos": ["MySQL", "PostgreSQL", "SQL Server"],
+        "Herramientas": ["Git", "Docker", "Linux"]
+    },
+    "certifications": [
+        {
+            "name": "CERTIFICADO CCNAv7 - Enterprise Networking, Security, and Automation",
+            "file": "/certifications/ccnp-enterprise.pdf"
+        },
+        {
+            "name": "CERTIFICADO CCNAv7 - Introduction to Networks",
+            "file": "/certifications/ccnp-intro.pdf"
+        },
+        {
+            "name": "CERTIFICADO DE APROVECHAMIENTO - Administración",
+            "file": "/certifications/admin.pdf"
+        },
+        {
+            "name": "CERTIFICADO DE APROVECHAMIENTO - Habilidades Socioemocionales para el Trabajo",
+            "file": "/certifications/socioemocionales.pdf"
+        },
+        {
+            "name": "CERTIFICADO DE APROVECHAMIENTO - Ventas y Servicio al Cliente",
+            "file": "/certifications/ventas.pdf"
+        },
+        {
+            "name": "CERTIFICADO DE LOGRO - Ingles B2+",
+            "file": "/certifications/ingles.pdf"
+        }
+        ],
+    "networks": [
+        {
+        "name": "GitHub",
+        "url": "https://github.com/Eyden17",
+        "icon": "FaGithub"
+        },
+        {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/eyden-su-diaz-52713335a",
+        "icon": "FaLinkedin"
+        }
+    ],
+    "extra": [
+        "Conocimiento intermedio sobre fibra óptica, con experiencia en taller práctico junto a una empresa limonense en crecimiento.",
+        "Experiencia en servicio al cliente y ventas, desarrollando habilidades de comunicación y resolución de problemas.",
+        "Disponibilidad para trabajar en equipo y adaptarme a diferentes entornos laborales."
+    ]
+    }
