@@ -46,6 +46,14 @@
         "technologies": ["HTML", "CSS"],
         "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab02/tree/lab5-responsive",
         "demo": "https://lab5-responsive--esuorg.netlify.app"
+      },
+      {
+        "title": "Laboratorio 6: Introducción a JavaScript",
+        "type": "Laboratorio",
+        "description": "Desarrollo de scripts básicos en JavaScript para manipular el DOM, manejar eventos y validar formularios en una página web.",
+        "date": "2025-09-14",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab06"
       }
     ]
   },
