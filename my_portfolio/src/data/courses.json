@@ -54,6 +54,29 @@
         "date": "2025-09-14",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab06"
+      },
+      {
+        "title": "Laboratorio 7: Consumo de API desde el cliente",
+        "type": "Laboratorio",
+        "description": "Exposición realizada junto a Elder y Brasly. Se implementó consumo de API REST desde el cliente utilizando fetch (y alternativas) con manejo de estados de carga, errores y renderizado dinámico.",
+        "date": "2025-09-24",
+        "technologies": ["Presentación"]
+      },
+      {
+        "title": "Proyecto 01: Banco Astralis (prototipo visual)",
+        "type": "Proyecto",
+        "description": "Prototipo visual de un banco nombrado ‘Astralis’: arquitectura de páginas, flujo básico de usuario y diseño UI.",
+        "date": "2025-09-28",
+        "technologies": ["NodeJs", "CSS", "Netlify", "React"],
+        "repo": "https://github.com/Eyden17/PY01-Desarrollo-de-Software",
+        "demo": "https://bancoastralis.netlify.app/"
+      },
+      {
+        "title": "Laboratorio 8: Wayground sobre exposiciones",
+        "type": "Laboratorio",
+        "description": "Actividad interactiva tipo Kahoot para repasar contenidos vistos en las exposiciones.",
+        "date": "2025-10-01",
+        "technologies": ["Presentación", "Wayground"]
       }
     ]
   },
