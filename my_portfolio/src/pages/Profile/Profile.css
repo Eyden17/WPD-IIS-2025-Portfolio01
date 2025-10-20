@@ -45,3 +45,26 @@
 .networks a[aria-label="LinkedIn"]:hover {
     color: #0A66C2;
 }
+
+/* ——— Utilidades PDF ——— */
+.pdf-hide {}
+
+/* Evitar cortes bruscos dentro de bloques clave */
+.profile h1, 
+.profile h2,
+.profile .bio,
+.profile .skills,
+.profile .certifications,
+.profile .networks,
+.profile .extra {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Forzar salto de página donde la uses */
+.page-break { page-break-before: always; break-before: page; }
+
+/* Ocultar controles en impresión del navegador por si usás window.print alguna vez */
+@media print {
+  .pdf-hide { display: none !important; }
+}

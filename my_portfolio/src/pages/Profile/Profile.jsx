@@ -1,3 +1,5 @@
+import React, { useRef, useCallback, useState } from "react";
+import html2pdf from "html2pdf.js";
 import "./Profile.css";
 import profile from "../../data/profile.json";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -7,10 +9,43 @@ const iconsMap = {
   FaLinkedin: <FaLinkedin aria-hidden="true" size={24} />
 };
 
-
 function Profile() {
+  const cvRef = useRef(null);
+  const [downloading, setDownloading] = useState(false);
+
+  const handleDownloadPDF = useCallback(async () => {
+    if (!cvRef.current) return;
+    try {
+      setDownloading(true);
+
+      // Clona el nodo para no afectar tu UI mientras se renderiza
+      const node = cvRef.current.cloneNode(true);
+      // Remueve elementos marcados para ocultar en PDF (botones, etc.)
+      node.querySelectorAll(".pdf-hide").forEach((el) => el.remove());
+
+      await html2pdf()
+        .set({
+          margin: [10, 10, 12, 10], // mm
+          filename: "Curriculum.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: null,
+            scrollY: 0
+          },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+          pagebreak: { mode: ["css", "legacy"] } // respeta .page-break si la usás
+        })
+        .from(node)
+        .save();
+    } finally {
+      setDownloading(false);
+    }
+  }, []);
+
   return (
-    <main className="profile">
+    <main className="profile" ref={cvRef}>
       <section className="bio">
         <figure>
           <img src={profile.photo} alt={`Fotografía profesional de ${profile.name}`} />
@@ -63,7 +98,6 @@ function Profile() {
         </ul>
       </section>
 
-
       <section className="extra">
         <h2>Información Adicional Relevante</h2>
         <ul>
@@ -73,8 +107,11 @@ function Profile() {
         </ul>
       </section>
 
-      <section className="cv-download">
-        <button onClick={() => window.print()}>Descargar CV en PDF</button>
+      {/* === Botón existente, ahora excluido del PDF === */}
+      <section className="cv-download pdf-hide">
+        <button onClick={handleDownloadPDF} disabled={downloading}>
+          {downloading ? "Generando…" : "Descargar CV en PDF"}
+        </button>
       </section>
     </main>
   );

@@ -11,7 +11,7 @@ const Header = () => {
             <img src={logo}
               alt="Logo de ESU" 
               width="70"
-              tabindex="-1">
+              tabIndex="-1">
             </img>
           </Link>
         </div>
@@ -20,6 +20,8 @@ const Header = () => {
           <li><Link to="/">Inicio</Link></li>
           <li><Link to="/trabajos">Cursos</Link></li>
           <li><Link to="/perfil">Perfil</Link></li>
+          <li><Link to="/recomendaciones">Recomendaciones</Link></li>
+          <li><Link to="/hobbies">Hobbies</Link></li>
         </ul>
       </nav>
     </header>
