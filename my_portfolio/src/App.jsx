@@ -6,7 +6,7 @@ import Recommendations from './pages/Recommendations/Recommendations.jsx'
 import Hobbies from './pages/Hobbies/Hobbies.jsx'
 import Drawings from './pages/Drawings/Drawings.jsx'
 import AboutMe from './pages/AboutMe/AboutMe.jsx'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "sonner";
 
 export default function App() {
