@@ -3,6 +3,7 @@ import html2pdf from "html2pdf.js";
 import "./Profile.css";
 import profile from "../../data/profile.json";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import eyden from '../../assets/images/eyden_su.png';
 
 const iconsMap = {
   FaGithub: <FaGithub aria-hidden="true" size={24} />,
@@ -18,10 +19,9 @@ function Profile() {
     try {
       setDownloading(true);
 
-      // Clona el nodo para no afectar tu UI mientras se renderiza
       const node = cvRef.current.cloneNode(true);
-      // Remueve elementos marcados para ocultar en PDF (botones, etc.)
       node.querySelectorAll(".pdf-hide").forEach((el) => el.remove());
+      node.classList.add("pdf-force-black");
 
       await html2pdf()
         .set({
@@ -31,11 +31,11 @@ function Profile() {
           html2canvas: {
             scale: 2,
             useCORS: true,
-            backgroundColor: null,
+            backgroundColor: "#ffffff",
             scrollY: 0
           },
           jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-          pagebreak: { mode: ["css", "legacy"] } // respeta .page-break si la usás
+          pagebreak: { mode: ["css", "legacy"] }
         })
         .from(node)
         .save();
@@ -48,7 +48,7 @@ function Profile() {
     <main className="profile" ref={cvRef}>
       <section className="bio">
         <figure>
-          <img src={profile.photo} alt={`Fotografía profesional de ${profile.name}`} />
+          <img src={eyden} alt={`Fotografía profesional de ${profile.name}`} />
         </figure>
         <article>
           <h1>{profile.name}</h1>
@@ -107,7 +107,6 @@ function Profile() {
         </ul>
       </section>
 
-      {/* === Botón existente, ahora excluido del PDF === */}
       <section className="cv-download pdf-hide">
         <button onClick={handleDownloadPDF} disabled={downloading}>
           {downloading ? "Generando…" : "Descargar CV en PDF"}

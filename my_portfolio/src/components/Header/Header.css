@@ -1,49 +1,264 @@
+/* ==========================================
+   HEADER -
+   ========================================== */
+
 .header {
-	background: #1a1a1a;
-	color: #fff;
-	padding: 0.8rem 0;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-	position: sticky;
-	top: 0;
-	z-index: 1000;
+  background: var(--secondary-background-color, #181b20);
+  color: var(--c-text, #fff);
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .container {
-	width: 95%;
-	margin: auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  width: 95%;
+  max-width: 1800px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
+
+/* ==========================================
+   LOGO
+   ========================================== */
 
 .logo a {
-	font-size: 1.4rem;
-	font-weight: 700;
-	color: #fff;
-	text-decoration: none;
-	letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--c-text, #fff);
+  text-decoration: none;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-.logo span {
-	color: #b4035c;
+.logo a:hover {
+  transform: scale(1.05);
 }
+
+.logo-img {
+  height: 55px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 48px;
+  }
+}
+
+
+/* ==========================================
+   MENÚ HAMBURGUESA - Solo visible en móvil
+   ========================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--c-text, #fff);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* ==========================================
+   NAVEGACIÓN - Desktop
+   ========================================== */
 
 .nav-links {
-	list-style: none;
-	display: flex;
-	gap: 1.5rem;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
-	text-decoration: none;
-	color: #ddd;
-	font-weight: 500;
-	transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--text-light, #b7c3cf);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--c-accent, #b4035c);
+  transition: width 0.3s ease;
 }
 
 .nav-links li a:hover {
-	color: #b4035c;
-	border-bottom: 2px solid #b4035c;
-	padding-bottom: 3px;
+  color: var(--c-accent, #b4035c);
 }
 
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   OVERLAY - Para cerrar el menú móvil
+   ========================================== */
+
+.menu-overlay {
+  display: none;
+}
+
+/* ==========================================
+   RESPONSIVE - Móvil (< 768px)
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  
+  /* Mostrar botón hamburguesa */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menú de navegación móvil */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--background-color-light, #2a2d33);
+    flex-direction: column;
+    gap: 0;
+    padding: 5rem 0 2rem;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 999;
+  }
+
+  /* Menú abierto */
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* Items del menú móvil */
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    color: var(--text-light, #b7c3cf);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links li a::after {
+    display: none;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:active {
+    background: var(--c-accent-dark, #7e0843);
+    color: var(--c-text, #fff);
+    padding-left: 2.5rem;
+  }
+
+  /* Overlay oscuro cuando el menú está abierto */
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - Tablet (768px - 1024px)
+   ========================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+   ========================================== */
+
+.hamburger:focus,
+.nav-links li a:focus {
+  outline: 2px solid var(--c-accent, #b4035c);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger,
+  .hamburger-line,
+  .nav-links,
+  .nav-links li a,
+  .menu-overlay {
+    transition: none;
+    animation: none;
+  }
+}

@@ -203,3 +203,84 @@
   justify-content: center;
   margin-top: 0.2rem;
 }
+
+
+/* ============================================
+   MOBILE FIXES
+   ============================================ */
+@media (max-width: 480px) {
+
+=  .recs-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .recs-hero-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    align-self: flex-start;
+  }
+
+  .recs-form-card {
+    padding: 1rem 0.9rem;
+  }
+
+  .recs-form .grid {
+    gap: 0.6rem;
+  }
+
+  .field span {
+    font-size: 0.85rem;
+  }
+
+  .field input,
+  .field textarea {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.8rem;
+  }
+
+  /* Botón enviar */
+  .actions {
+    justify-content: center;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .who strong {
+    font-size: 0.95rem;
+  }
+
+  .msg {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .card-foot {
+    font-size: 0.8rem;
+  }
+
+  .pager {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn.ghost {
+    width: 100%;
+  }
+}

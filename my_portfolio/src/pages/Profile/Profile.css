@@ -46,10 +46,8 @@
     color: #0A66C2;
 }
 
-/* ——— Utilidades PDF ——— */
 .pdf-hide {}
 
-/* Evitar cortes bruscos dentro de bloques clave */
 .profile h1, 
 .profile h2,
 .profile .bio,
@@ -57,14 +55,86 @@
 .profile .certifications,
 .profile .networks,
 .profile .extra {
-  break-inside: avoid;
-  page-break-inside: avoid;
+    break-inside: auto;
+    page-break-inside: auto;
+    display: block;
 }
 
-/* Forzar salto de página donde la uses */
+
 .page-break { page-break-before: always; break-before: page; }
 
-/* Ocultar controles en impresión del navegador por si usás window.print alguna vez */
-@media print {
-  .pdf-hide { display: none !important; }
+
+/* =========
+   MOBILE 
+   ========= */
+@media (max-width: 600px) {
+
+  .profile {
+    width: 94%;
+  }
+
+  .bio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+  }
+
+  .bio figure {
+    margin: 0;
+  }
+
+  .bio img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bio article h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .bio article p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    padding: 0 0.5rem;
+  }
+
+  /* Secciones generales */
+  section h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  section ul {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Redes y habilidades */
+  .skills li,
+  .certifications li,
+  .networks li {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  /* Botón descargar CV */
+  .cv-download {
+    text-align: center;
+  }
+
+  .cv-download button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+
+.pdf-force-black * {
+  color: #000000 !important;
+  background: #ffffff !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }

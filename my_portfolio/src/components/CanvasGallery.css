@@ -1,0 +1,76 @@
+/* Contenedor general del carrusel */
+.carousel-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 180, 190, 0.8) transparent;
+}
+
+/* Pista de items */
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 220px;
+  max-width: 250px;
+  height: auto;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover*/
+@media (hover: hover) and (pointer: fine) {
+  .carousel-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+/* ===== Scrollbar (WebKit: Chrome, Edge, Opera) ===== */
+@media (min-width: 768px) {
+  .carousel-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .carousel-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .carousel-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      90deg,
+      rgba(180, 180, 190, 0.9),
+      rgba(140, 140, 150, 0.9)
+    );
+    border-radius: 999px;
+  }
+
+  .carousel-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(200, 200, 210, 1),
+      rgba(150, 150, 160, 1)
+    );
+  }
+}
