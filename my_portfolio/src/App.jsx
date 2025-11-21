@@ -22,6 +22,7 @@ export default function App() {
         <Route path="/hobbies" element={<Hobbies/>}></Route>
         <Route path="/aboutme" element={<AboutMe/>}></Route>
         <Route path="/drawings" element={<Drawings/>}></Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   )
