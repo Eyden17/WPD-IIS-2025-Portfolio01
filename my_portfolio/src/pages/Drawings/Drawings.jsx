@@ -142,6 +142,7 @@ export default function Drawings() {
 
     const canvas = canvasRef.current;
     ctxRef.current.clearRect(0, 0, canvas.width, canvas.height);
+    setHistory([]);
   };
 
   /* ========================
@@ -218,6 +219,7 @@ export default function Drawings() {
 
       toast.success("¡Dibujo guardado correctamente!");
       window.dispatchEvent(new Event("drawing_saved"));
+      clearCanvas();
     } catch (err) {
       console.error(err);
       toast.error("Error al subir el dibujo", {
