@@ -75,7 +75,7 @@
         "title": "Laboratorio 8: APIs REST",
         "type": "Laboratorio",
         "description": "Actividad de desarrollo de API de manejo de productos con interfaz sencilla.",
-        "date": "2025-10-01",
+        "date": "2025-10-03",
         "technologies": ["NodeJs", "Express", "Postman", "HTML", "CSS"],
         "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab08"
       },
@@ -83,14 +83,14 @@
         "title": "Laboratorio 9: Servidor GraphQL con JWT y Persistencia en JSON",
         "type": "Laboratorio",
         "description": "Implementación de un servidor GraphQL en Node.js reemplazando los endpoints REST del Lab 8. Incluyó definición completa del schema (SDL), queries, mutations, autenticación JWT, roles, validación de entradas y manejo estándar de errores.",
-        "date": "2025-09-20",
+        "date": "2025-10-12",
         "technologies": ["Node.js", "GraphQL", "JWT", "JSON", "Resolvers"]
       },
       {
         "title": "Laboratorio 10: React con API Key y Negociación JSON/XML",
         "type": "Laboratorio",
         "description": "Desarrollo de un componente completo en React que consume un API protegido con API Key, implementando paginación, ordenamiento, detalle de producto, vista Raw (JSON/XML), skeletons, manejo de errores y estados vacíos.",
-        "date": "2025-10-01",
+        "date": "2025-10-24",
         "technologies": ["React", "JavaScript", "API REST", "XML", "JSON", "UI/UX"],
         "repo": "https://github.com/Eyden17/WPD-IIS-2025-Lab10"
       },
@@ -98,14 +98,14 @@
         "title": "Laboratorio 11: Wayground sobre materia en clase",
         "type": "Laboratorio",
         "description": "Actividad interactiva tipo Kahoot para repasar contenidos vistos en clase.",
-        "date": "2025-10-01",
+        "date": "2025-10-29",
         "technologies": ["Presentación", "Wayground"]
       },
       {
         "title": "Laboratorio 12: Svelte Javascript sobre exposiciones",
         "type": "Laboratorio",
         "description": "Exposición sobre framework frontend modernos, como gestionan la navegación, organización de vistas, comunicación, seguridad y SEO.",
-        "date": "2025-10-01",
+        "date": "2025-10-31",
         "technologies": ["Presentación", "Svelte", "JavaScript"],
         "demo": "https://estudianteccr-my.sharepoint.com/:f:/g/personal/esu_estudiantec_cr/Er4rYTdqQhJIlp3Gy9mr-osBNggjQVxwo-sf6SV6WZUmYA?e=MIRUMp"
       },
@@ -113,7 +113,7 @@
         "title": "Proyecto 02: Banco Astralis (API REST – Backend)",
         "type": "Proyecto",
         "description": "Implementación del backend funcional para el Banco Astralis. Se desarrolló una API REST con Node.js y Express, conectada a una base de datos relacional. Incluye autenticación con API Key y JWT, validación de roles, ejecución de Stored Procedures, manejo de cuentas, usuarios, tarjetas, movimientos, transferencias internas y flujos sensibles con OTP.",
-        "date": "2025-11-01",
+        "date": "2025-11-02",
         "technologies": [
           "Node.js",
           "Express",
@@ -131,7 +131,7 @@
         "title": "Laboratorio 13: Asistente Conversacional Inteligente",
         "type": "Laboratorio",
         "description": "Diseño e implementación de un asistente virtual inteligente capaz de responder preguntas sobre un banco simulado, usando su modelo de datos y complementando respuestas con lenguaje generado mediante la API de OpenAI.",
-        "date": "2025-10-12",
+        "date": "2025-11-12",
         "technologies": ["JavaScript", "OpenAI API", "Modelo de Datos", "UI Conversacional"],
         "repo": "https://github.com/Eyden17/WPD-IIS2025-Lab13"
       }
