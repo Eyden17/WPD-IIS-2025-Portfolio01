@@ -36,6 +36,11 @@
   height: 400px;
 }
 
+.canvas-board {
+  touch-action: none;
+}
+
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px,1fr));

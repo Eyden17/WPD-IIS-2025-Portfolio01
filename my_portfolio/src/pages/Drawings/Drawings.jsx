@@ -4,6 +4,22 @@ import CanvasGallery from "../../components/CanvasGallery.jsx";
 import { supabase } from "../../lib/supabaseClient.js";
 import { toast } from "sonner";
 
+
+const getPos = (e, canvas) => {
+  let x, y;
+
+  if (e.touches && e.touches.length > 0) {
+    const rect = canvas.getBoundingClientRect();
+    x = e.touches[0].clientX - rect.left;
+    y = e.touches[0].clientY - rect.top;
+  } else {
+    x = e.nativeEvent.offsetX;
+    y = e.nativeEvent.offsetY;
+  }
+
+  return { x, y };
+};
+
 export default function Drawings() {
   const canvasRef = useRef(null);
   const ctxRef = useRef(null);
@@ -53,24 +69,32 @@ export default function Drawings() {
 
   /* ========================
      DIBUJAR
-     ======================== */
+    ======================== */
+
+
 
   const startDrawing = (e) => {
     if (locked) return;
     setIsDrawing(true);
 
-    const { offsetX, offsetY } = e.nativeEvent;
+    const canvas = canvasRef.current;
+    const { x, y } = getPos(e, canvas);
+
     ctxRef.current.beginPath();
-    ctxRef.current.moveTo(offsetX, offsetY);
+    ctxRef.current.moveTo(x, y);
   };
+
 
   const draw = (e) => {
     if (!isDrawing || locked) return;
 
-    const { offsetX, offsetY } = e.nativeEvent;
-    ctxRef.current.lineTo(offsetX, offsetY);
+    const canvas = canvasRef.current;
+    const { x, y } = getPos(e, canvas);
+
+    ctxRef.current.lineTo(x, y);
     ctxRef.current.stroke();
   };
+
 
   const stopDrawing = () => {
     setIsDrawing(false);
@@ -210,14 +234,27 @@ export default function Drawings() {
       <canvas
         ref={canvasRef}
         className={`canvas-board ${locked ? "locked" : ""}`}
+
+        /* PC */
         onMouseDown={locked ? undefined : startDrawing}
         onMouseMove={locked ? undefined : draw}
         onMouseUp={stopDrawing}
 
-        onTouchStart={locked ? undefined : startDrawing}
-        onTouchMove={locked ? undefined : draw}
-        onTouchEnd={stopDrawing}
+        /* MÓVIL */
+        onTouchStart={(e) => {
+          e.preventDefault();
+          if (!locked) startDrawing(e);
+        }}
+        onTouchMove={(e) => {
+          e.preventDefault();
+          if (!locked) draw(e);
+        }}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          stopDrawing(e);
+        }}
       />
+
 
       <h2>Galería global</h2>
       <CanvasGallery />
