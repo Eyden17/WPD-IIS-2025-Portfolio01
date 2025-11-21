@@ -29,6 +29,7 @@ export default function Drawings() {
   const [size, setSize] = useState(4);
   const [saving, setSaving] = useState(false);
   const [locked, setLocked] = useState(false);
+  const [history, setHistory] = useState([]);
 
   /* ========================
      BLOQUEO POR USUARIO
@@ -97,9 +98,40 @@ export default function Drawings() {
 
 
   const stopDrawing = () => {
+    if (!isDrawing) return;
     setIsDrawing(false);
     ctxRef.current.closePath();
+
+    // Guardar estado después del trazo
+    const canvas = canvasRef.current;
+    const ctx = ctxRef.current;
+
+    const snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    setHistory((prev) => [...prev, snapshot]);
   };
+
+  const undo = () => {
+    if (locked) return;
+    if (history.length === 0) return;
+
+    const canvas = canvasRef.current;
+    const ctx = ctxRef.current;
+
+    setHistory((prev) => {
+      const copy = [...prev];
+      copy.pop();
+
+      const last = copy[copy.length - 1];
+      if (last) {
+        ctx.putImageData(last, 0, 0);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      return copy;
+    });
+  };
+
 
   /* ========================
      LIMPIAR
@@ -226,6 +258,9 @@ export default function Drawings() {
         </label>
 
         <button onClick={clearCanvas} disabled={locked}>Limpiar</button>
+        <button onClick={undo} disabled={locked || history.length === 0}>
+          Deshacer
+        </button>
         <button onClick={saveDrawing} disabled={locked || saving}>
           {saving ? "Guardando…" : "Guardar"}
         </button>
